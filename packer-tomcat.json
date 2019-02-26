@@ -52,7 +52,7 @@
                 "apt-get update",
                 "apt-get dist-upgrade -y",
                 "apt-get install -y tomcat8",
-                "cp /tmp/vmss-blue-green-0.0.1-SNAPSHOT.war /var/lib/tomcat8/webapps",
+                "cp /tmp/vmss-blue-green-0.0.1-SNAPSHOT.war /var/lib/tomcat8/webapps/sampleapp.war",
                 "/usr/sbin/waagent -force -deprovision+user && export HISTSIZE=0 && sync"
             ],
             "inline_shebang": "/bin/sh -x",
