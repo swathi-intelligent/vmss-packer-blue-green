@@ -6,7 +6,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <title>Azure Samples Hello World</title>
+  <title>Azure Samples Hello World - New</title>
 </head>
 <body>
   <H1>Hello Azure!</H1>
