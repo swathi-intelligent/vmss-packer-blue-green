@@ -5,37 +5,12 @@
 <artifactId>vmss-blue-green</artifactId>
 <packaging>war</packaging>
 <version>0.0.1-SNAPSHOT</version>
-<name>AzureAppDemo</name>
+<name>simple-tomcat-app</name>
 <dependencies>
-    <dependency>
-        <groupId>com.microsoft.azure</groupId>
-        <artifactId>azure-storage</artifactId>
-        <version>5.0.0</version>
-    </dependency>
     <dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>javax.servlet-api</artifactId>
         <version>3.1.0</version>
     </dependency>
 </dependencies>
-<build>
-    <!--<extensions>
-        <extension>
-            <groupId>org.apache.maven.wagon</groupId>
-            <artifactId>wagon-ftp</artifactId>
-            <version>1.0</version>
-        </extension>
-    </extensions>
-    <plugins>
-        <plugin>
-            <groupId>org.apache.tomcat.maven</groupId>
-            <artifactId>tomcat7-maven-plugin</artifactId>
-            <version>2.2</version>
-            <configuration>
-                <port>8080</port>
-                <path>/</path>
-            </configuration>
-        </plugin>
-    </plugins>-->
-</build>
 </project>

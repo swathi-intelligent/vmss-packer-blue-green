@@ -58,3 +58,6 @@ Thumbs.db
 
 # reduced pom files should not be included
 dependency-reduced-pom.xml
+
+exported-az-devops-build-release-pipelines
+vsts-agent-pod.yaml
