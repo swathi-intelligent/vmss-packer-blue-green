@@ -16,6 +16,12 @@
         },
         "greenVMSSName": {
             "value": "newimagename"
+        },
+        "location": {
+            "value": "southeastasia"
+        },
+        "numberOfVms": {
+            "value": 1
         }
     }
     
