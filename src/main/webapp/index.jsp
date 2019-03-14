@@ -9,6 +9,6 @@
   <title>Azure Samples Hello World - New</title>
 </head>
 <body>
-  <H1>Hello Azure! - Vnext</H1>
+  <H1>Hello Azure!</H1>
 </body>
 </html>

@@ -44,7 +44,7 @@ echo "Removing Green VMSS from Green backend pool ..."
 az vmss update -g $RESOURCE_GROUP -n $GREEN_VMSS_NAME --remove virtualMachineProfile.networkProfile.networkInterfaceConfigurations[0].ipConfigurations[0].loadBalancerBackendAddressPools 0
 
 # Remove new green vmss from green nat pool
-az vmss update -g VMSSBG -n $GREEN_VMSS_NAME --remove virtualMachineProfile.networkProfile.networkInterfaceConfigurations[0].ipConfigurations[0].loadBalancerInboundNatPools 0
+az vmss update -g $RESOURCE_GROUP -n $GREEN_VMSS_NAME --remove virtualMachineProfile.networkProfile.networkInterfaceConfigurations[0].ipConfigurations[0].loadBalancerInboundNatPools 0
 
 echo "Green VMSS removed from Green backend pool"
 # ------------------------------------------------------
@@ -55,5 +55,5 @@ echo "Green VMSS removed from Green backend pool"
 echo "Adding Green VMSS to backend pool ..."
 
 # Add new green vmss to blue backend pool
-az vmss update -g VMSSBG -n $GREEN_VMSS_NAME --add virtualMachineProfile.networkProfile.networkInterfaceConfigurations[0].ipConfigurations[0].loadBalancerBackendAddressPools "$LOAD_BALANCER_BLUE_BACKEND_POOL_ID"
+az vmss update -g $RESOURCE_GROUP -n $GREEN_VMSS_NAME --add virtualMachineProfile.networkProfile.networkInterfaceConfigurations[0].ipConfigurations[0].loadBalancerBackendAddressPools "$LOAD_BALANCER_BLUE_BACKEND_POOL_ID"
 # ------------------------------------------------------
