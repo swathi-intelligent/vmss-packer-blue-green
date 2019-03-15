@@ -2,23 +2,33 @@
 
 echo "************* Setting Variables from opts"
 
-while getopts ":r:b:g:p" opt; do
-  case $opt in
-    r) RESOURCE_GROUP="$OPTARG"
-    ;;
-    b) BLUE_VMSS_NAME="$OPTARG"
-    ;;
-    g) GREEN_VMSS_NAME="$OPTARG"
-    ;;
-    p) LOAD_BALANCER_BLUE_BACKEND_POOL_ID="$OPTARG"
-    ;;
-    \?) echo "Invalid option -$OPTARG" >&2
-    ;;
+while getopts :r:g:p:b:h opt; do
+  case "$opt" in
+    r) 
+       RESOURCE_GROUP="$OPTARG"
+       ;;
+    g) 
+       GREEN_VMSS_NAME="$OPTARG" 
+       ;;
+
+    p) 
+       LOAD_BALANCER_BLUE_BACKEND_POOL_ID="$OPTARG"
+       ;;
+    b) 
+       BLUE_VMSS_NAME="$OPTARG"
+       ;;   
+    h) 
+       echo "todo add help"
+       ;;
   esac
 done
 
-
 set -x
+
+echo "RESOURCE_GROUP: $RESOURCE_GROUP"
+echo "BLUE_VMSS_NAME: $BLUE_VMSS_NAME"
+echo "GREEN_VMSS_NAME: $GREEN_VMSS_NAME"
+echo "LOAD_BALANCER_BLUE_BACKEND_POOL_ID: $LOAD_BALANCER_BLUE_BACKEND_POOL_ID"
 
 ## IF BLUE VMSS EXISTS REMOVE IT FROM BLUE BACKEND POOL
 # ------------------------------------------------------
@@ -55,5 +65,5 @@ echo "Green VMSS removed from Green backend pool"
 echo "Adding Green VMSS to backend pool ..."
 
 # Add new green vmss to blue backend pool
-az vmss update -g "$(RESOURCE_GROUP)" -n "$(Build.BuildNumber)" --add virtualMachineProfile.networkProfile.networkInterfaceConfigurations[0].ipConfigurations[0].loadBalancerBackendAddressPools '{"id": "$(LOAD_BALANCER_BLUE_BACKEND_POOL_ID)"}'
+az vmss update -g "$RESOURCE_GROUP" -n "$GREEN_VMSS_NAME" --add virtualMachineProfile.networkProfile.networkInterfaceConfigurations[0].ipConfigurations[0].loadBalancerBackendAddressPools "{\"id\": \"$LOAD_BALANCER_BLUE_BACKEND_POOL_ID\"}"
 # ------------------------------------------------------
