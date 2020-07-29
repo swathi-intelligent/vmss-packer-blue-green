@@ -53,7 +53,7 @@
                 "sudo apt-get update",
                 "sudo apt-get install -y openjdk-8-jdk",
                 "java -version",
-                "sudo apt-get install -y tomcat8"
+                "sudo apt-get install -y tomcat8",
                 "sudo mkdir -p /var/lib/tomcat8/webapps/",
                 "sudo cp /tmp/vmss-blue-green-0.0.1-SNAPSHOT.war /var/lib/tomcat8/webapps/sampleapp.war",
                 "/usr/sbin/waagent -force -deprovision+user && export HISTSIZE=0 && sync"
