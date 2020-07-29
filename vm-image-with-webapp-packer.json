@@ -55,7 +55,7 @@
                 "java -version",
                 "sudo apt-get install -y tomcat8-docs tomcat8-examples tomcat8-admin",
                 "sudo mkdir -p /var/lib/tomcat8/webapps/",
-                "sudo service tomcat8 status"
+                "sudo service tomcat8 status",
                 "sudo cp /tmp/vmss-blue-green-0.0.1-SNAPSHOT.war /var/lib/tomcat8/webapps/sampleapp.war",
                 "/usr/sbin/waagent -force -deprovision+user && export HISTSIZE=0 && sync"
             ],
